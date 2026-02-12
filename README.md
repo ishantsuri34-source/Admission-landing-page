@@ -28,4 +28,4 @@ The goal of this project is to create a professional and accessible admission we
 
 ## 👨‍💻 Developed By
 
-Ishant Suri
+Ishantpreet Singh Dhiman
