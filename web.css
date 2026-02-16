@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+  
 }
 
 /* NAVBAR */
@@ -21,10 +22,11 @@
 .logo img {
   width: 120%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
+
 }
 .navbar{
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,32 +36,62 @@
   padding: 18px 60px;
   background: transparent;   /* transparent */
 
-  z-index: 1000;
+  z-index: 100;
 }
 
 .navbar nav a {
   margin-left: 25px;
   position: relative;
-  top: 30px;
+  top: 3px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
   font-size: large;
 }
 
-/* HERO */
 .hero {
+  background-image: url('./images/common/Rbpu.png');
+   overflow: hidden;
+  width: 100%;
+  height: 640px;
   display: flex;
-  /* background-image: url("/images/common/RBPU.webp"); */
-  background-size: cover;
-  background-position: center;
-  background-position-x: 0px;
-  background-position-y:-160px ;
-  background-repeat: no-repeat;
-  padding: 60px;
-  height: 720px;
-  color: transparent;
+ 
 }
+/* TEXT POSITION EXACTLY LIKE FIGMA */
+.hero-text {
+  position: absolute;
+  width: 949px;
+  height: 615px;
+  max-width: 100%;
+  top: 113px;
+  left: 632px;
+  opacity: 1;
+  transform: rotate(0deg);
+  display: flex;
+  align-items: center;
+}
+
+.hero-text h1 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-text .light {
+  font-size: 48px;
+  font-weight: 400;
+  color: #111;
+  letter-spacing: 2px;
+}
+
+.bold {
+    font-size: 58px;
+    font-weight: 800;
+    position: absolute;
+    left: 66px;
+    color: #000;
+    letter-spacing: 2px;
+}
+
 
 /* LEFT */
 .hero-left {
@@ -88,12 +120,12 @@
 
 /* RIGHT FORM */
 .hero-right {
-  width: 380px;
+  width: 350px;
   position: relative;
-  bottom: -57px;
+  bottom: -52px;
   z-index: 4;
-  right: 0px;
-  height: 690px;
+  right: 30px;
+  height: 620px;
   background: #ffffff;
   padding: 30px;
   border-radius: 6px;
@@ -108,7 +140,7 @@
   padding-top: 10px;
   border-radius: 6px 6px 0px 0px;
   height: 100px;
-  width: 380px;
+  width: 350px;
   background-size: cover;
   background-color: #bf1e2e;
 }
@@ -121,6 +153,7 @@
 
 .hero-right-box p {
   margin-top: 8px;
+  color: white;
 }
 
 /* INFO BAR */
@@ -1287,26 +1320,20 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-
   width: 48px;
   height: 48px;
   border-radius: 50%;
-
   background: #bf1e2e;
   color: #ffffff;
   border: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 18px;
   cursor: pointer;
-
   opacity: 0;
   pointer-events: none;
   transform: translateY(20px);
-
   transition: all 0.3s ease;
   z-index: 9999;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
@@ -1400,10 +1427,10 @@
   /* FORM CONTAINER */
   .hero-right {
     width: 100%;
-    max-width: 520px;
+    max-width: 430px;
     height: auto;
     bottom: 0;
-    margin: 8px auto 0;
+    margin: 8px auto 5px;
     padding: 5px;
     border-radius: 14px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
@@ -1766,3 +1793,35 @@ top:-32px;
   }
 }
 
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100vh;
+  }
+
+  .hero-text {
+    width: 100%;
+    height: auto;
+    top: 24%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    text-align: center;
+    display: block;
+  }
+
+  .hero-text .light {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .bold {
+    position: static;   /* remove absolute for mobile */
+    display: block;
+    font-size: 22px;
+    margin-top: 1px;
+    margin-left: 100px;
+    letter-spacing: 1px;
+  }
+
+}
